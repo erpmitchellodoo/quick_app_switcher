@@ -1,0 +1,27 @@
+.o_quick_app_switcher {
+    align-self: stretch;
+    min-height: var(--o-navbar-height);
+    gap: 2px;
+    margin-inline: 4px;
+    padding-inline: 6px;
+    border-inline: 1px solid rgba(0, 0, 0, 0.12);
+
+    .o_quick_app_switcher_item {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        margin-block: auto;
+        padding-inline: 10px;
+        white-space: nowrap;
+    }
+
+    .o_quick_app_switcher_empty {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        opacity: 0.45;
+    }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="quick_app_switcher.NavBar"
+      t-inherit="web_enterprise.EnterpriseNavBar"
+       t-inherit-mode="extension">
+        <xpath expr="//header" position="inside">
+            <div t-if="currentApp"
+                 class="o_quick_app_switcher d-none d-md-flex align-items-center justify-content-center"
+                 aria-label="Quick application shortcuts">
+                <button t-foreach="quickSwitcherShortcuts"
+                        t-as="app"
+                        t-key="app.id"
+                        type="button"
+                        class="o_quick_app_switcher_item btn btn-sm"
+                        t-att-class="menuService.getCurrentApp() === app ? 'btn-primary' : 'btn-secondary'"
+                        t-att-title="app.name"
+                        t-att-aria-label="app.name"
+                        t-on-click="() => this.onQuickSwitcherSelect(app)">
+                    <t t-esc="app.name"/>
+                </button>
+            </div>
+        </xpath>
+    </t>
+</templates>
